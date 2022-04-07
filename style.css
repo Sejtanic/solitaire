@@ -1,0 +1,166 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+  user-select: none;
+}
+:root {
+  --background-color: green;
+  --button-color: rgb(13, 63, 13);
+  --text-color: white;
+  --card-color: white;
+  --turned-over-card-color: blue;
+  --card-height: 200px;
+  --card-width: 120px;
+}
+body {
+  height: 100%;
+  background: var(--background-color);
+  padding: 10px auto;
+}
+.btn {
+  padding: 10px;
+  font-size: 20px;
+  background-color: var(--button-color);
+  color: var(--text-color);
+}
+.container {
+  margin: auto;
+  margin-bottom: 20px;
+  max-width: 1100px;
+}
+/* active places */
+.main-deck {
+  position: relative;
+}
+.new-deck-card {
+  position: relative;
+  height: var(--card-height);
+  width: var(--card-width);
+}
+
+.end-game-placement {
+  margin: 10px auto;
+  padding: 20px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+.card-visual {
+  width: var(--card-width);
+  height: var(--card-height);
+  border: 2px solid black;
+  border-radius: 10px;
+}
+.deck-card-switch {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 10px;
+}
+.final-card-placement {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 10px;
+}
+.main-card-area {
+  padding: 10px auto;
+  display: grid;
+  justify-content: center;
+  grid-template-columns: repeat(7, 1fr);
+}
+.main-playing-area {
+  margin: auto;
+}
+.final-playing-area {
+  position: relative;
+  width: var(--card-width);
+  height: var(--card-height);
+}
+
+.playing-card-visual {
+  position: absolute;
+  font-size: 17px;
+  border: 1px solid black;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: var(--card-color);
+  border-radius: 10px;
+  padding: 10px;
+  display: flex;
+  transition: 0.7s;
+}
+
+.inner {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.top-of-card {
+  display: flex;
+  align-items: flex-start;
+  width: 100%;
+}
+.suit {
+  margin-left: 5px;
+  font-size: 20px;
+}
+.middle-of-card {
+  font-size: 100px;
+}
+.bottom-of-card {
+  display: flex;
+  align-items: flex-start;
+  width: 100%;
+  transform: rotate(180deg);
+}
+.main-playing-area {
+  position: relative;
+}
+.turned {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  border: 5px solid white;
+  box-shadow: inset 0px 0px 0px 2px black;
+  border-radius: 10px;
+  background: url(/img/patern-2.jpg);
+  background-size: contain;
+}
+.header {
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  background: transparent;
+  margin: auto;
+}
+/* classes to switch  */
+.hidden {
+  display: none;
+}
+.red {
+  color: red;
+}
+.black {
+  color: black;
+}
+@media (max-width: 768px) {
+  .card-visual {
+    height: 150px;
+    width: 80px;
+  }
+  .middle-of-card {
+    font-size: 50px;
+  }
+}
